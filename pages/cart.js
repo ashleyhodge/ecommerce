@@ -5,8 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
-export default function Cart() {
+function Cart() {
 
   const { state, dispatch } = useContext(Store);
 
@@ -15,6 +16,11 @@ export default function Cart() {
 
 const removeItemHandler = (item) => {
   dispatch({ type: 'CART_REMOVE_ITEM', payload: item })
+}
+
+const updateCartHandler = (item, qty) => {
+  const quantity = Number(qty);
+  dispatch({type: 'CART_ADD_ITEM', payload:{...item, quantity}})
 }
 
   return (
@@ -55,7 +61,16 @@ const removeItemHandler = (item) => {
                         </Link>
                       </td>
                       <td className="p-5 text-right">
-                        {item.quantity}
+                        <select value={item.quantity} onChange={(e) => updateCartHandler(item, e.target.value)}>
+                        {
+                          [...Array(item.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))
+                        }
+                        
+                        </select>
                       </td>
                       <td className="p-5 text-right">
                         {item.price}
@@ -93,3 +108,5 @@ const removeItemHandler = (item) => {
     </Layout>
   )
 }
+
+export default dynamic(() => Promise.resolve(Cart), {ssr:false})

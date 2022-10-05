@@ -18,7 +18,7 @@ export default function ProductPage() {
     return <div>Product not found</div>
   }
 
-  const addToCarthandler = () => {
+  const addToCartHandler = () => {
     const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
@@ -66,7 +66,7 @@ export default function ProductPage() {
               <div>Status</div>
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
-            <button className="primary-button w-full" onClick={addToCarthandler}>
+            <button className="primary-button w-full" onClick={addToCartHandler}>
               Add to cart
             </button>
           </div>
