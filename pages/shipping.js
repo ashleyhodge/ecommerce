@@ -48,7 +48,7 @@ export default function Shipping() {
       })
     );
 
-    router.push('/payment');
+    router.push('/order');
   };
 
   return (

@@ -6,6 +6,8 @@ import Image from "next/image";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import axios from 'axios'
+import  { toast } from 'react-toastify';
 
 function Cart() {
 
@@ -18,9 +20,15 @@ const removeItemHandler = (item) => {
   dispatch({ type: 'CART_REMOVE_ITEM', payload: item })
 }
 
-const updateCartHandler = (item, qty) => {
+const updateCartHandler = async (item, qty) => {
   const quantity = Number(qty);
+  const { data } = await axios.get(`api/products/${item._id}`);
+  if(data.countInStock < quantity) {
+    return toast.error(`Sorry! This product is either out of stock or we only have the amount in stock thats currently in your cart! Please contact us on information about when this item will be back in stock or if you need a quote on a bulk order. 😊`)
+  }
+
   dispatch({type: 'CART_ADD_ITEM', payload:{...item, quantity}})
+  toast.success('Product updated in the cart')
 }
 
   return (
