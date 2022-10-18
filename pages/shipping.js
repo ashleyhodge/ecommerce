@@ -25,14 +25,14 @@ export default function Shipping() {
     setValue('fullName', shippingAddress.fullName);
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
-    setValue('postalCode', shippingAddress.postalCode);
+    setValue('zipCode', shippingAddress.zipCode);
     setValue('country', shippingAddress.country);
   }, [setValue, shippingAddress]);
 
-  const submitHandler = ({ fullName, address, city, postalCode, country }) => {
+  const submitHandler = ({ fullName, address, city, zipCode, country }) => {
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
-      payload: { fullName, address, city, postalCode, country },
+      payload: { fullName, address, city, zipCode, country },
     });
     Cookies.set(
       'cart',
@@ -42,7 +42,7 @@ export default function Shipping() {
           fullName,
           address,
           city,
-          postalCode,
+          zipCode,
           country,
         },
       })
@@ -101,16 +101,16 @@ export default function Shipping() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="zipCode">Zip Code</label>
           <input
             className="w-full"
-            id="postalCode"
-            {...register('postalCode', {
-              required: 'Please enter postal code',
+            id="zipCode"
+            {...register('zipCode', {
+              required: 'Please enter zip code',
             })}
           />
-          {errors.postalCode && (
-            <div className="text-red-500 ">{errors.postalCode.message}</div>
+          {errors.zipCode && (
+            <div className="text-red-500 ">{errors.zipCode.message}</div>
           )}
         </div>
         <div className="mb-4">

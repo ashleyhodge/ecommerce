@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import { getError } from '../utils/error';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { Router } from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function PlaceOrder() {
 
@@ -23,6 +23,8 @@ export default function PlaceOrder() {
   const taxPrice = round2(itemsPrice * 0.15);
   const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
+
+  const router = useRouter();
 
   const [loading, setLoading] = useState(false);
   const placeOrderHandler = async () => {
@@ -45,7 +47,7 @@ export default function PlaceOrder() {
           cartItems: [],
         })
       );
-      Router.push(`/order/${data._id}`);
+      router.push(`/order/${data._id}`);
     } catch (err) {
       setLoading(false);
       toast.error(getError(err));
