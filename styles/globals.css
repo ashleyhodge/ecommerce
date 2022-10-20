@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* :root {
+  @apply bg-[#DDDDDD]
+} */
 
 .card {
   @apply mb-5 block rounded-lg border border-gray-200 shadow-md

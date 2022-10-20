@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { useContext } from 'react';
 
 import Link from 'next/link';
@@ -10,10 +10,13 @@ import Product from '../../Models/Product';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+import { IoMdArrowRoundBack } from 'react-icons/io'
+import { BsFacebook, BsInstagram, BsPinterest } from "react-icons/bs"
+
 export default function ProductPage(props) {
   const { state, dispatch } = useContext(Store);
   const { product } = props;
-  const router = useRouter();
+  // const router = useRouter();
 
   if (!product) {
     return <Layout title="Product Not Found">Product not found</Layout>;
@@ -31,55 +34,50 @@ export default function ProductPage(props) {
       return;
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-    router.push('/cart');
+    // router.push('/cart');
   };
   return (
     <Layout title={product.name}>
-      <div className="py-2">
-        <Link href="/">back to products</Link>
-      </div>
-      <div className="grid md:grid-cols-4 md:gap-3">
-        <div className="md:col-span-2">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={640}
-            height={640}
-            layout="responsive"
-          ></Image>
+
+      <Link href="/"><IoMdArrowRoundBack className='w-16 h-6 mt-6'/></Link>
+    <div className="lg:w-4/5 mx-auto grid md:grid-cols-2 md:gap-3">
+      <Image 
+        alt={product.name} 
+        className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" 
+        src={`${product.image}`}
+        width={640}
+        height={640}
+        layout="responsive"
+        />
+      <div className="w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        
+        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>
+        <div className="flex mb-4">
+          <span className="flex items-center">
+            <span className="text-gray-600 ml-3">{product.numReviews} Reviews</span>
+          </span>
+          <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+            <a className="text-gray-500">
+              <BsFacebook />
+            </a>
+            <a className="ml-2 text-gray-500">
+              <BsInstagram />
+            </a>
+            <a className="ml-2 text-gray-500">
+              <BsPinterest />
+            </a>
+          </span>
         </div>
-        <div>
-          <ul>
-            <li>
-              <h1 className="text-lg">{product.name}</h1>
-            </li>
-            <li>Category: {product.category}</li>
-            
-            <li>
-              {product.rating} of {product.numReviews} reviews
-            </li>
-            <li>Description: {product.description}</li>
-          </ul>
+        <p className="leading-relaxed">{product.description}</p>
+        <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+        <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
         </div>
-        <div>
-          <div className="card p-5">
-            <div className="mb-2 flex justify-between">
-              <div>Price</div>
-              <div>${product.price}</div>
-            </div>
-            <div className="mb-2 flex justify-between">
-              <div>Status</div>
-              <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
-            </div>
-            <button
-              className="primary-button w-full"
-              onClick={addToCartHandler}
-            >
-              Add to cart
-            </button>
-          </div>
+        <div className="flex">
+          <span className="title-font font-medium text-2xl text-gray-900">${product.price}</span>
+          <button onClick={addToCartHandler} className="flex ml-auto primary-button">Add to cart</button>
         </div>
       </div>
+    </div>
     </Layout>
   );
 }
