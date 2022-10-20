@@ -28,8 +28,8 @@ export default function Home({ products }) {
     toast.success('Product added to cart')
   }
   return (
-    <Layout title="Homepage">
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+    <Layout title="Shop">
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 mx-5'>
         {products.map((product) => (
           <ProductItem product={product} key={product.slug} 
           addToCartHandler={addToCartHandler}/>

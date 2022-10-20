@@ -9,6 +9,8 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import Cookies from 'js-cookie';
 import { AiOutlineMenu, AiOutlineShopping } from "react-icons/ai";
+import { FaTiktok, FaPatreon } from "react-icons/fa"
+import { BsFacebook, BsInstagram, BsYoutube} from "react-icons/bs"
 
 export default function Layout({ title, children }) {
   const [showNav, setShowNav] = useState(false);
@@ -52,6 +54,13 @@ export default function Layout({ title, children }) {
               className="sm:hidden block w-10 h-10 p-2 cursor-pointer"
             />
           )} 
+          <ul className="hidden sm:fixed sm:block text-[#6D374E] top-[40%] sm:left-0 text-[20px] sm:text-[30px]">
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out p-[10px] hover:px-[25px] sm:hover:px-[30px] opacity-[60%] hover:opacity-[100%]'><a href="#" ><BsFacebook/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out p-[10px] hover:px-[25px] sm:hover:px-[30px] opacity-[60%] hover:opacity-[100%]'><a href="#"><BsInstagram/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out p-[10px] hover:px-[25px] sm:hover:px-[30px] opacity-[60%] hover:opacity-[100%]'><a href="#"><FaTiktok/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out p-[10px] hover:px-[25px] sm:hover:px-[30px] opacity-[60%] hover:opacity-[100%]'><a href="#"><BsYoutube/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out p-[10px] hover:px-[25px] sm:hover:px-[30px] opacity-[60%] hover:opacity-[100%]'><a href="#"><FaPatreon /></a></li>
+          </ul>
             <Link href="/">
               <a className="text-lg font-bold">Stanli Jane</a>
             </Link>
@@ -145,8 +154,14 @@ export default function Layout({ title, children }) {
       </nav>
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
-        <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © 2022 Amazona</p>
+        <footer className="flex h-10 justify-center items-center">
+        <ul className="flex text-[#6D374E] bottom-5 text-[30px] sm:hidden">
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out px-[10px] hover:p-[10px] opacity-[60%] hover:opacity-[100%]'><a href="#" ><BsFacebook/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out px-[10px] hover:p-[10px] opacity-[60%] hover:opacity-[100%]'><a href="#"><BsInstagram/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out px-[10px] hover:p-[10px] opacity-[60%] hover:opacity-[100%]'><a href="#"><FaTiktok/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out px-[10px] hover:p-[10px] opacity-[60%] hover:opacity-[100%]'><a href="#"><BsYoutube/></a></li>
+            <li className='relative transition-all hover:duration-300 hover:ease-in-out px-[10px] hover:p-[10px] opacity-[60%] hover:opacity-[100%]'><a href="#"><FaPatreon /></a></li>
+          </ul>
         </footer>
       </div>
     </>

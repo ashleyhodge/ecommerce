@@ -8,7 +8,7 @@
   @apply mb-5 block rounded-lg border border-gray-200 shadow-md
 }
 .primary-button {
-  @apply rounded bg-amber-300 shadow outline-none hover:bg-amber-400 active:bg-amber-500 py-2 px-4
+  @apply rounded text-white bg-[#6D374E] shadow outline-none hover:bg-[#51293B] active:bg-amber-500 py-2 px-4
 }
 .default-button {
   @apply rounded bg-gray-100 py-2 text-black shadow outline-none hover:bg-gray-200 active:bg-gray-300
