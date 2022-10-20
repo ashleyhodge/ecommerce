@@ -16,12 +16,12 @@ export default function PlaceOrder() {
   const { cart } = state;
   const { cartItems, shippingAddress } = cart;
 
-  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
+  const round2 = (num) => (Math.round(num * 100) / 100).toFixed(2);
 
-  const itemsPrice = round2(cartItems.reduce((a, c) => a + c.quantity * c.price, 1)) ///123.4567 => 123.46
+  const itemsPrice = cartItems.reduce((a, c) => a + c.quantity * c.price, 0) ///123.4567 => 123.46
   const shippingPrice = itemsPrice > 200 ? 0 : 15; // if total is over 200 shipping is free, if not it's 15
-  const taxPrice = round2(itemsPrice * 0.15);
-  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
+  const taxPrice = round2(itemsPrice * 0.12);
+  const totalPrice = round2(itemsPrice + shippingPrice + (itemsPrice * 0.12));
 
 
   const router = useRouter();
@@ -64,26 +64,9 @@ export default function PlaceOrder() {
           </div>
         ) :
         (
-          <div className='grid md:grid-cols-3 md:gap-3'>
-            <div className='overflow-x-auto md:col-span-2'>
+          <div className='grid md:grid-cols-3 md:gap-3 mx-5'>
+            <div className='overflow-x-auto md:col-span-3'>
               <div className='card p-5'>
-                <h2 className='mb-2 text-lg'>Shipping Address</h2>
-                <div>
-                  {shippingAddress.fullName}, {shippingAddress.address}, {' '}
-                  {shippingAddress.city}, {shippingAddress.zipCode}, {' '}
-                  {shippingAddress.country}
-                </div>
-                <Link href="/shipping">Edit</Link>
-              </div>
-            </div>
-            <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Payment Method</h2>
-              <div>PayPal</div>
-              <div>
-                {/* <Link href="/payment">Edit</Link> */}
-              </div>
-            </div>
-            <div className='card p-5 md:col-span-2'>
               <h2 className='mb-2 text-lg'>Order Items</h2>
               <table className='min-w-full'>
                 <thead className='border-b'>
@@ -123,8 +106,21 @@ export default function PlaceOrder() {
               <div>
                 <Link href="/cart">Edit</Link>
               </div>
+              </div>
             </div>
-            <div className='card  p-5 '>
+
+            <div className='card p-5 md:col-span-2'>
+            <h2 className='mb-2 text-lg'>Shipping Address</h2>
+                <div className='flex items-center'>
+                  {shippingAddress.fullName}, {shippingAddress.address}, {' '}
+                  {shippingAddress.city}, {shippingAddress.zipCode}, {' '}
+                  {shippingAddress.country}
+                </div>
+                <Link href="/shipping">Edit</Link>
+
+
+            </div>
+            <div className='card  p-5 md:row-span-3'>
               <h2 className='mb-2 text-lg'>Order Summary</h2>
               <ul>
                 <li>
@@ -157,7 +153,7 @@ export default function PlaceOrder() {
                     onClick={placeOrderHandler}
                     className="primary-button w-full"
                   >
-                    {loading ? 'Loading...' : 'Place Order'}
+                    {loading ? 'Loading...' : 'Pay Now'}
                   </button>
                 </li>
               </ul>
@@ -170,4 +166,4 @@ export default function PlaceOrder() {
   )
 }
 
-PlaceOrder.auth = true;
+// PlaceOrder.auth = true;

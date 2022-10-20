@@ -134,4 +134,4 @@ export default function Shipping() {
   );
 }
 
-Shipping.auth = true;
+// Shipping.auth = true;

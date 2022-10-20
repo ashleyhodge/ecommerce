@@ -5,7 +5,7 @@ import db from '../../../../utils/db';
 const handler = async (req, res) => {
   const session = await getSession({ req });
   if (!session) {
-    return res.status(401).send('Error: signin required');
+    return res.status(401).send('Error: sign in required');
   }
 
   await db.connect();

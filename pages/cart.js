@@ -108,6 +108,11 @@ const updateCartHandler = async (item, qty) => {
                     Checkout
                   </button>
                 </li>
+                <li>
+                  <button className="w-full" onClick={() => router.push('/shipping')}>
+                    Checkout as guest
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
