@@ -25,7 +25,7 @@ const data = {
       rating: 4.5,
       numReviews: 8,
       countInStock: 20,
-      description: 'A popular shirt',
+      description: 'Consectetur ullamco ullamco eiusmod reprehenderit nostrud pariatur duis enim. Pariatur cillum non est elit excepteur aliquip voluptate culpa. Deserunt commodo quis ipsum culpa dolore excepteur consectetur sit. Non dolore culpa ipsum cupidatat minim ad anim velit. Laborum ut deserunt eiusmod elit. Sunt ea dolore adipisicing occaecat incididunt reprehenderit duis non occaecat ea. Magna consequat aliqua magna aliqua laboris exercitation non officia exercitation ex mollit.',
     },
     {
       name: 'Window Hanging - Pink Berries',
@@ -36,7 +36,7 @@ const data = {
       rating: 3.2,
       numReviews: 10,
       countInStock: 20,
-      description: 'A popular shirt',
+      description: 'Sunt proident proident nulla eiusmod in. Eiusmod aliquip consequat sint occaecat eu nostrud anim nostrud ipsum qui. Consectetur tempor veniam nisi dolore culpa sunt laborum.',
     },
     {
       name: 'Window Hanging - Skull',
@@ -47,7 +47,7 @@ const data = {
       rating: 4.5,
       numReviews: 3,
       countInStock: 20,
-      description: 'A popular shirt',
+      description: 'Velit eu tempor veniam quis non aliqua tempor. Ad ad esse ullamco enim proident est aliquip esse adipisicing sit duis ut laborum esse. Labore reprehenderit laboris aliquip amet mollit anim excepteur esse veniam adipisicing reprehenderit anim ullamco. Veniam ullamco tempor id elit veniam elit eu commodo. Sint esse culpa officia incididunt dolore. Exercitation fugiat laboris mollit esse nisi non eiusmod aliquip labore do commodo et Lorem. Non eiusmod velit ullamco amet mollit est quis pariatur non labore velit laborum esse.',
     },
     {
       name: 'Window Hanging - Green & White Flower',
@@ -58,7 +58,7 @@ const data = {
       rating: 2.9,
       numReviews: 13,
       countInStock: 20,
-      description: 'Smart looking pants',
+      description: 'Ipsum esse ex irure officia incididunt incididunt do magna officia velit. Ex id incididunt commodo reprehenderit nostrud nostrud elit. Ut est Lorem mollit dolore culpa nisi. Sint ad velit deserunt velit ullamco enim sunt nulla. Do occaecat mollit irure mollit velit fugiat ex aliqua veniam nisi amet. Aliqua consectetur ex ea adipisicing enim quis deserunt nulla elit esse anim sit. Nisi voluptate mollit eu officia enim esse eu.',
     },
     // {
     //   name: 'Window Hanging - Succulents',
@@ -80,7 +80,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Sunt elit duis enim laboris magna velit tempor fugiat pariatur ea cillum occaecat minim ut. Officia enim laboris sit amet dolore Lorem mollit id ut. Nulla do deserunt eiusmod qui excepteur laborum cillum eu aute pariatur irure duis do sint. Ipsum fugiat voluptate qui dolore tempor non quis nulla labore mollit cupidatat. Laboris velit veniam sunt minim est consectetur ipsum.',
     },
     {
       name: 'Window Hanging - Purple Flower',
@@ -91,7 +91,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Velit est commodo sint ullamco elit velit aliqua eiusmod laboris labore pariatur do occaecat dolor. Sit enim sit nulla non nulla aliqua eiusmod labore dolor. Nostrud labore reprehenderit enim Lorem dolore ipsum enim sint sint tempor. Velit tempor mollit duis amet aute culpa officia et occaecat cupidatat enim id.',
     },
     {
       name: 'Window Hanging - Purple Flower',
@@ -102,7 +102,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Cupidatat est nisi sint labore eu cupidatat. Deserunt amet laborum exercitation consequat consectetur consectetur nostrud amet. Commodo ea deserunt tempor laborum magna fugiat id nisi enim nisi incididunt.',
     },
     {
       name: 'USB Cover - Pink Flower',
@@ -113,7 +113,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Reprehenderit veniam excepteur irure dolore est ea velit quis. Cupidatat aliqua ex anim deserunt tempor dolor incididunt id quis exercitation. Dolor laborum id do qui nostrud Lorem velit incididunt cillum amet ullamco esse. Labore laborum elit cupidatat est culpa. Eu nulla aliqua velit est sint excepteur sint. Sunt cillum qui eiusmod do et in sunt mollit. Velit nisi reprehenderit qui nulla qui ad ullamco ex irure irure voluptate nostrud.',
     },
     {
       name: 'USB Cover - Vines',
@@ -124,7 +124,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Nisi eu id tempor sunt minim ullamco consequat adipisicing qui. Et exercitation laborum dolore exercitation Lorem dolore enim esse nulla. Consequat anim excepteur sunt ipsum. Incididunt minim nostrud amet nulla ex nulla exercitation enim reprehenderit irure eu ea veniam enim. Eu ea dolore elit officia veniam qui laborum tempor officia. Cupidatat labore nisi tempor quis irure eiusmod. Duis cupidatat fugiat aute velit amet ex deserunt.',
     },
     {
       name: 'USB Cover - Orange Berries',
@@ -135,7 +135,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Adipisicing ad aute qui ea incididunt labore elit laborum. Do aute deserunt eu in excepteur do aliquip Lorem proident. Magna ad occaecat aute occaecat mollit id ipsum enim qui eiusmod do laborum ullamco ipsum. Ex sint consequat commodo labore nostrud eiusmod sint magna veniam. Commodo veniam cupidatat dolor esse culpa laborum consequat excepteur nisi eiusmod Lorem officia elit sint. Velit qui nulla id incididunt consequat elit laborum.',
     },
     {
       name: 'USB Cover - Navy',
@@ -146,7 +146,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Elit esse labore laboris ut quis mollit mollit laboris aliqua. Laboris deserunt aliqua culpa in anim amet nisi. Incididunt nisi ullamco minim nulla amet. Ex tempor incididunt irure pariatur aliqua exercitation. Minim proident quis commodo officia non minim ut magna consequat nisi Lorem. Dolor cillum cillum exercitation aliqua officia. Nisi non id quis sunt consectetur consectetur pariatur.',
     },
     {
       name: 'USB Cover - Red Flower',
@@ -157,7 +157,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Amet duis aliquip enim velit non voluptate. Est aliqua occaecat reprehenderit nulla. Dolor nulla veniam aliquip officia tempor aliquip adipisicing non ut velit velit. Sunt veniam duis id cupidatat labore voluptate quis incididunt laboris ullamco. Est quis proident consequat anim non deserunt laboris esse qui consectetur tempor et. Nisi excepteur deserunt incididunt tempor aute ut.',
     },
     {
       name: 'USB Cover - Red',
@@ -168,7 +168,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Eu ipsum do ad et. Consectetur occaecat amet quis est minim ea Lorem id eu dolor culpa exercitation. Officia anim id sint aliquip anim duis duis culpa fugiat ad est dolore. Mollit consectetur eu dolor velit non.',
     },
     {
       name: 'USB Cover - Purple Flower',
@@ -179,7 +179,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 20,
-      description: 'A popular pants',
+      description: 'Sunt fugiat veniam labore irure cupidatat voluptate ad laboris reprehenderit velit. Ex cupidatat ad magna esse et dolor excepteur. Nisi do occaecat tempor sint irure excepteur anim proident ut velit pariatur.',
     },
   ],
 };
